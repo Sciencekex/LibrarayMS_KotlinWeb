@@ -1,5 +1,7 @@
 package io.github.sciencekex
 
+import io.github.sciencekex.service.StudentService
+
 fun main() {
     while (true) {
         println("========图书管理系统========")
@@ -13,7 +15,7 @@ fun main() {
         val input = readLine()
         when (input) {
             "1" -> {
-                println("即将进行录入学生信息")
+                StudentService.addStudent()
             }
 
             "2" -> {
@@ -21,11 +23,19 @@ fun main() {
             }
 
             "3" -> {
-                println("即将进行查询学生信息")
+                println("即将进行录入借阅信息")
             }
 
             "4" -> {
+                println("即将进行查询学生信息")
+            }
+
+            "5" -> {
                 println("即将进行查询书籍信息")
+            }
+
+            "6" -> {
+                println("即将进行查询借阅信息")
             }
 
             else -> {

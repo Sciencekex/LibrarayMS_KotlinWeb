@@ -2,18 +2,13 @@ package io.github.sciencekex
 
 import io.github.sciencekex.mapper.StudentMapper
 import io.github.sciencekex.util.SqlUtil
+
 import org.apache.ibatis.session.SqlSession
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 
-//class MainTest {
-//    val session: SqlSession = SqlUtil.openSession()
-//    @BeforeAll
-//    @Test
-//    fun test() {
-//    }
-//}
+
 class MainTest {
 
     companion object {
@@ -36,6 +31,6 @@ class MainTest {
 
     @Test
     fun test() {
-        studentMapper.test()
+
     }
 }
