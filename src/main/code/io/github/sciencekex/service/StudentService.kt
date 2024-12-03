@@ -11,7 +11,8 @@ class StudentService {
             println("请输入需要插入的学生名称：")
             val name = readLine()?.trim() ?: ""
             println("请输入需要插入的学生性别（男/女）：")
-            val gender = readLine()?.trim() ?: ""
+            val inputGender = readLine()?.trim() ?: ""
+            val gender = if (inputGender == "男" || inputGender == "女") inputGender else "男"
             // 性别筛一下,不然SQL会报错中断程序
             println("请输入需要插入的学生年龄：")
             val ageInput = readLine()?.trim()
@@ -27,6 +28,22 @@ class StudentService {
                 }
             }
         }
-    }
 
+        fun listStudents() {
+            SqlUtil.doSqlWork(StudentMapper::class.java) { mapper ->
+                val students = mapper.selectAllStudents()
+                if (students.isNotEmpty()) {
+                    val format = "%-5s %-6s %-5s %-5s"
+                    println(String.format(format, "学号", "姓名", "性别", "年龄"))
+                    students.forEach { student ->
+                        println(String.format(format, student.sid, student.name, student.gender, student.age))
+                    }
+                } else {
+                    System.err.println("系统中没有任何学生信息")
+                }
+            }
+
+        }
+
+    }
 }

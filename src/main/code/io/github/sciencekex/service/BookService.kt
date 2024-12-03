@@ -2,6 +2,7 @@ package io.github.sciencekex.service
 
 import io.github.sciencekex.entity.Book
 import io.github.sciencekex.mapper.BookMapper
+import io.github.sciencekex.mapper.StudentMapper
 import io.github.sciencekex.util.SqlUtil
 
 class BookService {
@@ -22,6 +23,22 @@ class BookService {
                     println("用户信息插入失败！")
                 }
             }
+        }
+
+        fun listBooks() {
+            SqlUtil.doSqlWork(BookMapper::class.java) { mapper ->
+                val books = mapper.selectAllBooks()
+                if (books.isNotEmpty()) {
+                    val format = "%-5s %-10s %s"
+                    println(String.format(format, "编号", "标题", "简介"))
+                    books.forEach { book ->
+                        println(String.format(format, book.bid, book.title, book.description))
+                    }
+                } else {
+                    System.err.println("系统中没有任何书本信息")
+                }
+            }
+
         }
     }
 

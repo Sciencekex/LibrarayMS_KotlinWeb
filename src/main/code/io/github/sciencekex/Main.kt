@@ -29,11 +29,11 @@ fun main() {
             }
 
             "4" -> {
-                println("即将进行查询学生信息")
+                StudentService.listStudents()
             }
 
             "5" -> {
-                println("即将进行查询书籍信息")
+                BookService.listBooks()
             }
 
             "6" -> {
