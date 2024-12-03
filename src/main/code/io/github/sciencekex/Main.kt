@@ -3,8 +3,11 @@ package io.github.sciencekex
 import io.github.sciencekex.service.BookService
 import io.github.sciencekex.service.BorrowService
 import io.github.sciencekex.service.StudentService
+import java.util.logging.LogManager
 
 fun main() {
+    LogManager
+
     while (true) {
         println("========图书管理系统========")
         println("1. 录入学生信息")
