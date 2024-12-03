@@ -1,5 +1,7 @@
 package io.github.sciencekex
 
+import io.github.sciencekex.service.BookService
+import io.github.sciencekex.service.BorrowService
 import io.github.sciencekex.service.StudentService
 
 fun main() {
@@ -19,11 +21,11 @@ fun main() {
             }
 
             "2" -> {
-                println("即将进行录入书籍信息")
+                BookService.addBook()
             }
 
             "3" -> {
-                println("即将进行录入借阅信息")
+                BorrowService.addBorrow()
             }
 
             "4" -> {

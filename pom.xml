@@ -23,7 +23,7 @@
 
     <build>
         <sourceDirectory>src/main/code</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+        <testSourceDirectory>src/test/code</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
